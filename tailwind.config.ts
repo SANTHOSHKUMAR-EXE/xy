@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				vastav: {
+					purple: '#9b87f5',
+					darkPurple: '#1A1F2C',
+					lightPurple: '#D6BCFA',
+					blue: '#0EA5E9',
+					black: '#121212',
+					darkBlue: '#0c1222',
+					pink: '#e879f9',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +94,49 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'gradient-shift': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'fade-up': 'fade-up 0.8s ease-out',
+				'pulse-slow': 'pulse-slow 3s infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'spin-slow': 'spin-slow 12s linear infinite',
+				'gradient-shift': 'gradient-shift 6s ease infinite'
+			},
+			backgroundImage: {
+				'hero-pattern': 'radial-gradient(circle at 50% 50%, rgba(123, 97, 255, 0.2) 0%, rgba(0, 0, 0, 0) 60%)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-purple': 'linear-gradient(135deg, rgb(135, 94, 255) 0%, rgb(75, 40, 195) 100%)',
+				'gradient-blue-purple': 'linear-gradient(90deg, #0ea5e9 0%, #9b87f5 100%)',
 			}
 		}
 	},
