@@ -45,7 +45,7 @@ const HeroSection = () => {
             className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: a0.5 }}
+            transition={{ duration: 0.5 }}
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
