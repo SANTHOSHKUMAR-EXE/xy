@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Zap, Server, FileText, Image, Eye, Brain, Robot } from 'lucide-react';
+import { Shield, Zap, Server, FileText, Image, Eye, Brain, Bot } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FeatureCard = ({ icon, title, description, delay, index }: { 
@@ -52,7 +52,7 @@ const FeaturesSection = () => {
       delay: "animate-delay-1"
     },
     {
-      icon: <Robot className="h-7 w-7 text-white" />,
+      icon: <Bot className="h-7 w-7 text-white" />,
       title: "Decision Engine",
       description: "Comprehensive reporting with confidence percentages, annotated images, and metadata summaries.",
       delay: "animate-delay-2"

@@ -3,9 +3,10 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { useTheme } from '@/hooks/use-theme';
+import * as THREE from 'three';
 
 const AnimatedSphere = () => {
-  const ref = useRef<THREE.Mesh>(null!);
+  const ref = useRef<THREE.Mesh>(null);
   const { isDarkTheme } = useTheme();
 
   useFrame(({ clock }) => {
