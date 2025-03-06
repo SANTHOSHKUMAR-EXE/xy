@@ -48,13 +48,37 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border selection:bg-vastav-purple/20 selection:text-white;
   }
 
   body {
-    @apply bg-vastav-darkBlue text-foreground;
+    @apply bg-vastav-darkBlue text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-vastav-darkBlue;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
 
+@layer utilities {
   .glass-card {
     @apply bg-black/30 backdrop-blur-md border border-white/10 shadow-lg;
   }
@@ -82,4 +106,96 @@
   .animate-delay-4 {
     animation-delay: 0.8s;
   }
+  
+  .perspective {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-xl bg-black/40 border border-white/10 shadow-[0_8px_16px_rgba(0,0,0,0.5)];
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .animated-border {
+    @apply relative;
+    background: linear-gradient(90deg, #333 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease-out;
+  }
+  
+  .animated-border:hover {
+    background-position: left bottom;
+  }
+  
+  .glow {
+    box-shadow: 0 0 15px 1px rgba(155, 135, 245, 0.4);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(155, 135, 245, 0.7);
+  }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+.animate-ripple {
+  animation: ripple 1.5s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* Fix for framer-motion sometimes causing scroll issues */
+.framer-motion-fix {
+  overflow-x: hidden;
+  width: 100%;
 }
