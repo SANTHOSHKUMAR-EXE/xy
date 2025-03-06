@@ -113,9 +113,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="hidden lg:block"
+            className="hidden lg:block relative z-10"
           >
-            <div className="relative">
+            <div className="relative perspective">
               <div className="absolute inset-0 bg-gradient-radial from-vastav-purple/30 via-transparent to-transparent blur-lg"></div>
               <AiModelViewer />
             </div>
